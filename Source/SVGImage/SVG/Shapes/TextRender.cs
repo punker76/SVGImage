@@ -193,9 +193,13 @@ namespace SVGImage.SVG.Shapes
                 }
                 baselineOrigin = newBaseline;
             }
-            textChunks.Add(currentTextChunk);
 
-            foreach(var textChunk in textChunks)
+            if (currentTextChunk != null)
+            {
+                textChunks.Add(currentTextChunk);
+            }
+
+            foreach (TextChunk textChunk in textChunks)
             {
                 if (textChunk.GlyphRuns.Count == 0)
                 {
